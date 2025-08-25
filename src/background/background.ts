@@ -1,5 +1,5 @@
 // Simple background script - just calls your backend
-const BACKEND_URL = 'http://localhost:3000'; // Change to your deployed URL
+const BACKEND_URL = 'https://dexchat.onrender.com'; // Change to your deployed URL
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'CREATE_CHARGE') {

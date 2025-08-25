@@ -30,7 +30,7 @@ export const VoiceChat: React.FC<VoiceChatProps> = ({ tier }) => {
   console.log('[DexChat][VoiceChat] init: roomId=', roomId, 'tier=', tier);
 
   // Add: backend URL (public HTTPS endpoint)
-  const BACKEND_URL = 'https://YOUR_BACKEND_HOST'; // e.g. https://dexchat.yourdomain.com
+  const BACKEND_URL = 'https://dexchat.onrender.com'; // e.g. https://dexchat.onrender.com
 
   // Initialize Agora client
   useEffect(() => {
@@ -144,7 +144,7 @@ export const VoiceChat: React.FC<VoiceChatProps> = ({ tier }) => {
       } catch (error) {
         console.error('Error initializing Agora client:', error);
         if (error instanceof TypeError) {
-          setError('Cannot reach backend (http://localhost:3000). Please start the backend server and ensure host permissions allow localhost.');
+          setError('Cannot reach backend (https://dexchat.onrender.com). Please check your connection and host permissions.');
         } else {
           setError('Failed to initialize voice chat. Please try again.');
         }

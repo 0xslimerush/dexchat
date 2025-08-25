@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const roomTier = document.getElementById('roomTier');
 
     // Backend URL
-    const BACKEND_URL = 'https://YOUR_BACKEND_HOST';
+    const BACKEND_URL = 'https://dexchat.onrender.com';
 
     // State
     let currentToken = null;

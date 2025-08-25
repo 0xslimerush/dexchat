@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Voice and text chat for DexScreener with tiered access",
   "permissions": ["storage", "tabs", "scripting"],
-  "host_permissions": ["https://dexscreener.com/*", "https://YOUR_BACKEND_HOST/*"],
+  "host_permissions": ["https://dexscreener.com/*", "https://dexchat.onrender.com/*"]
   "background": {
     "service_worker": "dist/background.js"
   },
