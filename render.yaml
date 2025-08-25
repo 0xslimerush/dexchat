@@ -1,7 +1,7 @@
 services:
   - type: web
     name: dexchat-backend
-    env: node
+    runtime: node
     rootDir: backend
     plan: free
     autoDeploy: true
@@ -9,30 +9,23 @@ services:
     startCommand: node server.js
     healthCheckPath: /api/public-config
 
-    # Pull shared envs (secrets) from the group below so we don't commit values
-    envVarGroups:
-      - dexchat-backend-env
-
-    # Pin Node.js version and production mode
     envVars:
+      # Runtime settings
       - key: NODE_ENV
         value: production
       - key: NODE_VERSION
         value: 22.16.0
 
-envVarGroups:
-  - name: dexchat-backend-env
-    envVars:
-      # Create these as account-level Secrets in Render with the exact names below
+      # Secrets & config — supply via Dashboard on first Blueprint apply
       - key: COINBASE_API_KEY
-        fromSecret: COINBASE_API_KEY
+        sync: false
       - key: SUPABASE_URL
-        fromSecret: SUPABASE_URL
+        sync: false
       - key: SUPABASE_SERVICE_KEY
-        fromSecret: SUPABASE_SERVICE_KEY
+        sync: false
       - key: SUPABASE_ANON_KEY
-        fromSecret: SUPABASE_ANON_KEY
+        sync: false
       - key: AGORA_APP_ID
-        fromSecret: AGORA_APP_ID
+        sync: false
       - key: AGORA_APP_CERTIFICATE
-        fromSecret: AGORA_APP_CERTIFICATE
+        sync: false
